@@ -1,0 +1,45 @@
+{
+  "phonebook": [
+    { 
+        "id": 1,
+        "name": "Arto Hellas", 
+        "number": "040-1234567",
+        "date": "2020-10-28T18:35:34.091Z"
+    },
+    { 
+        "id": 2,
+        "name": "Ada Lovelace", 
+        "number": "39-44-5323523",
+        "date": "2020-01-28T18:35:34.091Z"
+    },
+    { 
+        "id": 3,
+        "name": "Dan Abramov", 
+        "number": "12-43-234345",
+        "date": "2020-05-28T18:35:34.091Z"
+    },
+    { 
+        "id": 4,
+        "name": "Mary Poppendieck", 
+        "number": "39-23-6423122",
+        "date": "2020-10-08T14:35:34.091Z"
+    }
+  ],  
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
