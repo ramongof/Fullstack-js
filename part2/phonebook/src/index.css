@@ -1,0 +1,50 @@
+h1 {
+    color: green;
+    font-style: italic;
+}
+
+li {
+    color: gray;
+    padding-top: 3px;
+    font-size: 15px;
+}
+
+.person {
+    color: gray;
+    padding-top: 5px;
+    font-style: 15px;
+}
+
+button {
+    border-radius: 5px;    
+    border: 1px solid red;    
+}
+
+.form {        
+    font-style: 15px;
+    padding: 1%;    
+}
+.form button {
+    border-radius: 5px;    
+    border: 1px solid green;    
+}
+.form div {
+    padding: 1px;    
+}
+
+.notification {
+    background: lightgrey;
+    font-size: 20px;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.error {
+    color: red;    
+}
+
+.success {
+    color: green;
+}
