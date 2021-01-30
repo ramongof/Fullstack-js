@@ -19,6 +19,7 @@ app.use(morgan((tokens, request, response) => {
     })
 );
 
+app.use(express.static('build'));
 app.use(express.json());
 
 let persons = [
@@ -127,7 +128,7 @@ app.delete('/api/persons/:id', (request, response) => {
     response.status(204).end();
 })
 
-const PORT = process.env.PORT || 3002;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
