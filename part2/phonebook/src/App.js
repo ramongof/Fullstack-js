@@ -59,8 +59,9 @@ const App = () => {
         if(window.confirm(`${newName} is already added to phonebook, replace the old number with a new one?`)) {          
           personService 
             .update(persons.filter(value => value.name === newName).map(value => value.id), personObject)
-            .then(returnedPerson => {              
-              setPersons(persons.map(person => person.name !== newName ? person: returnedPerson, 'person'));
+            .then(returnedPerson => {                  
+              console.log({...personObject, id:returnedPerson.id},'Looking for id');                      
+              setPersons(persons.map(person => person.name !== newName ? person: {...personObject, id:returnedPerson.id}));
               setNotification(
                 `${newName} phone was updated to ${newNumber}.`
               )
@@ -68,9 +69,9 @@ const App = () => {
               handleTimeout()
             })
             .catch(error => {
-              setPersons(persons.filter(value => value.name !== newName))
+              // setPersons(persons.filter(value => value.name !== newName))
               setNotification(
-                `Information of ${newName} has already been removed from server`
+                error.response.data.error
               )
               setClassCss('notification error')
               handleTimeout()
@@ -89,9 +90,9 @@ const App = () => {
               setClassCss('notification success')   
               handleTimeout()           
             })
-            .catch(error => {
+            .catch(error => {              
               setNotification(
-                'We could not contact the server, please try again later.'
+                error.response.data.error
               )
               setClassCss('notification error')  
               handleTimeout()
