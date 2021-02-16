@@ -70,6 +70,7 @@ const App = () => {
             })
             .catch(error => {
               // setPersons(persons.filter(value => value.name !== newName))
+              console.log(error.response.data.error);
               setNotification(
                 error.response.data.error
               )

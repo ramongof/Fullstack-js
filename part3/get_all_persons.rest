@@ -3,13 +3,13 @@ Content-Type: application/json
 
 {
     "name": "Mike Smith",
-    "number": "0317-123-12"
+    "number": "0317-233-122"
 }
 ###
 GET http://localhost:3001/api/people/
 ###
 
-GET http://localhost:3001/api/people/6019f0b1c279ef5818f51aab
+GET http://localhost:3001/api/people/602b5bb16c5182171c15d617204
 ###
 
-DELETE http://localhost:3001/api/people/6025c65841101719100db0e3
+DELETE http://localhost:3001/api/people/602b6ed25e4913534007d51a
