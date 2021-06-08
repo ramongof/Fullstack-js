@@ -1,28 +1,30 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
-const personSchema = new mongoose.Schema({
-  name: {
+const noteSchema = new mongoose.Schema({
+  content: {
     type: String,
     required: true,
     unique: true,
-    minlength: 3
-  },
-  number: {
-    type: String,
-    required: true,
-    unique: true,
-    minlength: 12
+    minlength: 5
   },
   date: {
     type: Date,
     required: true
   },
+  important: {
+    type: Boolean,
+    default: false
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },
 });
 
-personSchema.plugin(uniqueValidator);
+noteSchema.plugin(uniqueValidator);
 
-personSchema.set('toJSON', {
+noteSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id.toString();
     delete returnedObject._id;
@@ -30,4 +32,6 @@ personSchema.set('toJSON', {
   }
 });
 
-module.exports = mongoose.model('Person', personSchema);
+const Note = mongoose.model('Note', noteSchema);
+
+module.exports = Note;
