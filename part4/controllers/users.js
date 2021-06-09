@@ -10,7 +10,7 @@ userRouter.get('/', async (request, response) => {
 userRouter.post('/', async (request, response) => {
     const body = request.body;
     const salt = bcrypt.genSaltSync(10);
-    console.log(body.password);
+    console.log(body.password.lenght());
     return false;
     const passwordHash = bcrypt.hashSync(body.password, salt)
 
